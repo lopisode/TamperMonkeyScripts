@@ -20,7 +20,12 @@ GM_registerMenuCommand('Send Saved Data On Page', function() {
         var i = 0
 
         for(i=0; i < outlinedNotes.length ; i++){
-            stringData += outlinedNotes[i].innerHTML.valueOf() + " ";
+            if(i > 0){
+                stringData += "||";
+            }
+            if(outlinedNotes[i].innerHTML.valueOf().length){
+                stringData += outlinedNotes[i].innerHTML.valueOf();
+            }
         }
 
         const dateValue = new Date();
