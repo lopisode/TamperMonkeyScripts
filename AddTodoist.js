@@ -33,7 +33,7 @@ function copyData () {
             url:        "https://api.todoist.com/rest/v2/tasks",
             data:       JSON.stringify({
                 'content': todoist_content,
-                'description': todoist_description + " \n\n " + stringData
+                'description': todoist_description + "\n\n " + window.location.href + "\n\n" + stringData
             }),
             headers:    {
                 'accept': 'application/json',
