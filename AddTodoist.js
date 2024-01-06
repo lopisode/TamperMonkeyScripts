@@ -14,17 +14,19 @@
 GM_registerMenuCommand ("Add Item To Do Ist Task List", copyData, "T");
 
 function copyData () {
-    var stringData = prompt('Add Task');
+    var todoist_content = prompt('Add Task Name');
+    var todoist_description = prompt('Add Task Description');
         GM_xmlhttpRequest ( {
             method:     "POST",
-            url:        "http://127.0.0.1:8000",
+            url:        "https://api.todoist.com/rest/v2/tasks",
             data:       JSON.stringify({
-                'content': stringData,
-                'description': 'Data sent from TamperMonkey Script'
+                'content': todoist_content,
+                'description': todoist_description
             }),
             headers:    {
                 'accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer <APIKEY>'
             },
             onError: function() {
                 console.log("error");
