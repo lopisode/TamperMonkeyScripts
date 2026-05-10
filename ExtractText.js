@@ -4,7 +4,10 @@
 // @version      0.4
 // @description  Extracts article data to clipboard as JSON matching Python Article dataclass
 // @author       You
-// @match        *://*/*
+// @match        *://*.ft.com/*
+// @match        *://*.wsj.com/*
+// @match        *://*.nytimes.com/*
+// @match        *://*.bloomberg.com/*
 // @grant        GM_setClipboard
 // @grant        GM_registerMenuCommand
 // ==/UserScript==
